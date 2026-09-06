@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Services – Movif India International</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:      #faf6f0;
+    --warm-white: #fff9f2;
+    --sand:       #f0e8d8;
+    --teal:       #1e5f6e;
+    --teal-mid:   #267a8c;
+    --teal-light: #3a9db5;
+    --teal-pale:  #e0f2f7;
+    --amber:      #c47d1a;
+    --amber-light:#e0992e;
+    --rust:       #b5402a;
+    --dark:       #1a1a1a;
+    --mid:        #555;
+    --light-text: #888;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--warm-white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 200;
+    background: rgba(250,246,240,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(30,95,110,0.15);
+    padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; }
+  .logo-badge {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid var(--rust);
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 14px; color: #fff;
+    letter-spacing: -1px;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--teal); line-height: 1.2;
+  }
+  .nav-name small {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--amber);
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+  .nav-links a {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--mid); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-back {
+    color: var(--teal) !important;
+    border-bottom: 1px solid var(--teal);
+    padding-bottom: 1px;
+  }
+  .nav-cta {
+    background: var(--teal) !important;
+    color: #fff !important;
+    padding: 10px 22px; border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal-mid) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 80vh;
+    background: var(--teal);
+    display: flex; align-items: center;
+    padding: 120px 7vw 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-img {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=70');
+    background-size: cover; background-position: center;
+    opacity: 0.15;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 41px
+    );
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .breadcrumb {
+    display: flex; gap: 8px; align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--amber-light); }
+  .breadcrumb span { color: var(--amber-light); }
+  .hero-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--amber-light); margin-bottom: 18px;
+    animation: fadeUp 0.6s 0.05s ease both;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 80px); font-weight: 900; line-height: 1.05;
+    color: #fff; margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--amber-light); }
+  .hero-desc {
+    font-size: 20px; line-height: 1.8; color: rgba(255,255,255,0.65);
+    margin-bottom: 40px; max-width: 540px;
+    animation: fadeUp 0.6s 0.15s ease both;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.6s 0.2s ease both; }
+  .btn-amber {
+    background: var(--amber); color: #fff;
+    padding: 14px 32px;
+    font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s; display: inline-block;
+  }
+  .btn-amber:hover { background: var(--amber-light); transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent; color: rgba(255,255,255,0.8);
+    padding: 14px 32px;
+    font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--amber-light); color: var(--amber-light); }
+
+  /* Hero side stats */
+  .hero-right-panel {
+    position: absolute; right: 7vw; top: 50%; transform: translateY(-50%);
+    z-index: 2;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .h-stat {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 24px 32px; min-width: 180px;
+    border-bottom: none;
+    backdrop-filter: blur(6px);
+  }
+  .h-stat:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .h-stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px; font-weight: 900;
+    color: var(--amber-light); display: block; line-height: 1;
+  }
+  .h-stat-l {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); display: block; margin-top: 4px;
+  }
+
+  /* ─── STRIP ─── */
+  .strip { height: 5px; background: linear-gradient(90deg, var(--teal), var(--amber), var(--rust), var(--amber), var(--teal)); }
+
+  /* ─── SECTION COMMON ─── */
+  .section-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 14px; display: block;
+  }
+  .section-h {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 50px); font-weight: 700; line-height: 1.15;
+    color: var(--teal); margin-bottom: 20px;
+  }
+  .section-h em { font-style: italic; color: var(--amber); }
+
+  /* ─── INTRO ─── */
+  .intro-band {
+    background: var(--sand);
+    padding: 56px 5vw; text-align: center;
+  }
+  .intro-band p {
+    font-size: 22px; font-style: italic;
+    color: var(--teal); max-width: 780px; margin: 0 auto; line-height: 1.7;
+  }
+  .intro-band p strong { font-style: normal; color: var(--amber); }
+
+  /* ─── TRADING SERVICES ─── */
+  .trading-services { padding: 100px 5vw; }
+  .ts-inner { max-width: 1200px; margin: 0 auto; }
+  .ts-header { margin-bottom: 60px; }
+  .ts-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+  }
+  .ts-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(30,95,110,0.1);
+    padding: 48px 44px;
+    display: flex; gap: 28px;
+    transition: background 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .ts-card:hover {
+    background: var(--teal-pale);
+    box-shadow: 0 8px 40px rgba(30,95,110,0.12);
+  }
+  .ts-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px; font-weight: 900;
+    color: rgba(30,95,110,0.06);
+    position: absolute; top: 8px; right: 20px; line-height: 1;
+  }
+  .ts-icon {
+    font-size: 40px; flex-shrink: 0; line-height: 1; margin-top: 4px;
+  }
+  .ts-body { }
+  .ts-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--teal); margin-bottom: 10px;
+  }
+  .ts-desc { font-size: 17px; line-height: 1.75; color: var(--mid); }
+  .ts-features {
+    list-style: none; margin-top: 16px;
+  }
+  .ts-features li {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+    color: var(--teal); padding: 4px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ts-features li::before {
+    content: '✓';
+    color: var(--amber); font-weight: 900;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how { background: var(--teal); padding: 100px 5vw; }
+  .how-inner { max-width: 1100px; margin: 0 auto; }
+  .how-header { margin-bottom: 60px; }
+  .how-header .section-h { color: #fff; }
+  .how-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  }
+  .how-step {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .how-step:hover { background: rgba(255,255,255,0.09); }
+  .how-step-arrow {
+    position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
+    color: rgba(255,255,255,0.2); font-size: 20px; z-index: 2;
+  }
+  .how-step:last-child .how-step-arrow { display: none; }
+  .how-step-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px; font-weight: 900;
+    color: rgba(224,153,46,0.2); line-height: 1;
+    margin-bottom: 16px;
+  }
+  .how-step-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--amber-light); margin-bottom: 10px;
+  }
+  .how-step-text { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+  /* ─── WHY TRADE WITH US ─── */
+  .why { padding: 100px 5vw; background: var(--sand); }
+  .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+  .why-list { list-style: none; margin-top: 28px; }
+  .why-li {
+    display: flex; gap: 18px; padding: 18px 0;
+    border-bottom: 1px solid rgba(30,95,110,0.1);
+  }
+  .why-li:last-child { border-bottom: none; }
+  .why-check {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 900; flex-shrink: 0;
+    font-family: 'Lato', sans-serif;
+  }
+  .why-li strong {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 700; color: var(--teal); margin-bottom: 4px;
+  }
+  .why-li span { font-size: 16px; color: var(--mid); line-height: 1.65; }
+
+  /* ─── COUNTRIES ─── */
+  .countries { padding: 80px 5vw; background: var(--warm-white); }
+  .countries-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .countries-tags {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 40px;
+  }
+  .ctag {
+    padding: 10px 20px;
+    background: var(--teal-pale);
+    border: 1px solid rgba(30,95,110,0.2);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--teal); transition: all 0.2s; cursor: default;
+  }
+  .ctag:hover { background: var(--teal); color: #fff; }
+
+  /* ─── PHOTO STRIP ─── */
+  .photo-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    height: 280px; gap: 4px;
+  }
+  .photo-strip-item { overflow: hidden; background: #1e5f6e; }
+  .photo-strip-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s; display: block;
+  }
+  .photo-strip-item:hover img { transform: scale(1.07); }
+
+  /* ─── CONTACT ─── */
+  .contact { padding: 100px 5vw; background: var(--warm-white); }
+  .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-left p { font-size: 18px; color: var(--mid); line-height: 1.8; margin-bottom: 36px; }
+  .cdet { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+  .cdet-icon {
+    width: 44px; height: 44px; background: var(--teal-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .cdet-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--teal); display: block; margin-bottom: 4px;
+  }
+  .cdet-val { font-size: 17px; color: var(--dark); line-height: 1.5; }
+  .contact-form-box { background: var(--sand); padding: 48px 44px; }
+  .cf-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--teal); margin-bottom: 28px; }
+  .fg { margin-bottom: 20px; }
+  .fg label {
+    display: block; font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--light-text); margin-bottom: 8px;
+  }
+  .fg input, .fg textarea, .fg select {
+    width: 100%; background: var(--warm-white);
+    border: 1px solid rgba(0,0,0,0.12); padding: 12px 16px;
+    font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--dark);
+    outline: none; transition: border-color 0.2s;
+  }
+  .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--teal); }
+  .fg textarea { height: 100px; resize: none; }
+  .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* ─── CTA BAND ─── */
+  .cta-band {
+    background: var(--amber);
+    padding: 60px 5vw; text-align: center;
+  }
+  .cta-band h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 12px;
+  }
+  .cta-band p { font-size: 19px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+  .btn-white {
+    background: #fff; color: var(--amber);
+    padding: 14px 36px;
+    font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-white:hover { background: var(--teal); color: #fff; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #111a1e; padding: 48px 5vw 28px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px; padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px;
+  }
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px;
+  }
+  .footer-brand-name span { color: var(--amber-light); }
+  .footer-tagline { font-size: 15px; color: rgba(255,255,255,0.38); line-height: 1.7; }
+  .footer-page-badge {
+    display: inline-block; margin-top: 12px;
+    padding: 6px 14px; background: rgba(30,95,110,0.3);
+    font-family: 'Lato', sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--teal-light);
+  }
+  .footer-col h4 {
+    font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--amber-light); margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li {
+    font-size: 15px; color: rgba(255,255,255,0.38); padding: 5px 0; cursor: pointer; transition: color 0.2s;
+  }
+  .footer-col ul li:hover { color: rgba(255,255,255,0.75); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copy { font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+  .footer-back { font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 1px; color: var(--teal-light); text-decoration: none; }
+  .footer-back:hover { color: var(--amber-light); }
+
+/* ─── PAGE TRANSITIONS ─── */
+  .page-transition-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--teal);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .page-transition-overlay.fade-out { opacity: 1; pointer-events: all; }
+  body { animation: pageIn 0.4s ease both; }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ─── REVIEWS CAROUSEL (Trading) ─── */
+  .reviews-t {
+    background: #0e2a30;
+    padding: 100px 5vw;
+    position: relative; overflow: hidden;
+  }
+  .reviews-t::before {
+    content: '\201C';
+    position: absolute; top: 20px; left: 4vw;
+    font-family: 'Playfair Display', serif;
+    font-size: 220px; line-height: 1;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+  .reviews-t-header { text-align: center; margin-bottom: 48px; }
+  .reviews-t-header .section-h { color: #fff; }
+  .reviews-t-header p { font-size: 18px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+  .t-reviews-summary {
+    display: flex; justify-content: center; gap: 56px;
+    margin-bottom: 56px; flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .t-rsumm { text-align: center; }
+  .t-rsumm-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px; font-weight: 900;
+    color: var(--amber-light); display: block; line-height: 1;
+  }
+  .t-rsumm-lbl {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); display: block; margin-top: 6px;
+  }
+
+  /* Carousel layout */
+  .t-carousel-wrap {
+    position: relative; max-width: 860px; margin: 0 auto;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .t-carousel-arrow {
+    width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #fff; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    line-height: 1;
+  }
+  .t-carousel-arrow:hover { background: var(--teal); border-color: var(--teal); }
+  .t-carousel-viewport {
+    flex: 1; overflow: hidden;
+  }
+  .t-carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .t-review-card {
+    min-width: 100%; width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(58,157,181,0.2);
+    padding: 44px 48px;
+    display: flex; flex-direction: column;
+    box-sizing: border-box;
+    transition: background 0.2s;
+  }
+  .t-review-card:hover { background: rgba(58,157,181,0.08); }
+  .t-review-stars {
+    color: var(--amber-light); font-size: 20px;
+    letter-spacing: 3px; margin-bottom: 16px;
+  }
+  .t-review-tag {
+    display: inline-block; margin-bottom: 20px;
+    padding: 5px 14px;
+    background: rgba(58,157,181,0.15);
+    border: 1px solid rgba(58,157,181,0.3);
+    font-family: 'Lato', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--teal-light);
+  }
+  .t-review-text {
+    font-size: 19px; line-height: 1.85;
+    color: rgba(255,255,255,0.78);
+    font-style: italic; flex: 1; margin-bottom: 36px;
+  }
+  .t-review-author {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .t-review-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .t-review-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px; font-weight: 700; color: #fff; display: block;
+  }
+  .t-review-meta {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px; color: rgba(255,255,255,0.38); display: block; margin-top: 4px;
+  }
+  .t-review-flag { margin-left: auto; font-size: 26px; }
+
+  .t-carousel-dots-row {
+    display: flex; justify-content: center; gap: 10px; margin-top: 32px;
+  }
+  .t-carousel-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,0.18); border: none; cursor: pointer;
+    transition: background 0.25s, transform 0.25s; padding: 0;
+  }
+  .t-carousel-dot.active { background: var(--amber-light); transform: scale(1.35); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-right-panel { display: none; }
+    .ts-grid { grid-template-columns: 1fr; }
+    .how-steps { grid-template-columns: 1fr 1fr; }
+    .why-inner { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
+    .photo-strip-item { height: 180px; }
+    .nav-links { display: none; }
+    .t-reviews-summary { gap: 28px; }
+    .t-carousel-arrow { width: 36px; height: 36px; font-size: 16px; }
+    .t-review-card { padding: 32px 24px; }
+    .t-review-text { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-badge">MI</div>
+    <div class="nav-name">Movif India International
+      <small>Trading Services Division</small>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-back">← Main Website</a></li>
+    <li><a href="#services">Our Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#countries">Global Reach</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Movif India International</a>
+      <span>›</span>
+      <span>Trading Services</span>
+    </div>
+    <div class="hero-label">Dedicated Trading Division</div>
+    <h1 class="hero-title">Global <em>Trading</em><br>Services</h1>
+    <p class="hero-desc">
+      Need import/export facilitation without manufacturing? Our dedicated trading division handles procurement, logistics, documentation and end-to-end trade coordination — seamlessly.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-amber">Start a Trade Enquiry</a>
+      <a href="index.html" class="btn-ghost">← Main Website</a>
+    </div>
+  </div>
+  <div class="hero-right-panel">
+    <div class="h-stat">
+      <span class="h-stat-n">30+</span>
+      <span class="h-stat-l">Years Trading</span>
+    </div>
+    <div class="h-stat">
+      <span class="h-stat-n">20+</span>
+      <span class="h-stat-l">Countries</span>
+    </div>
+    <div class="h-stat">
+      <span class="h-stat-n">B2B</span>
+      <span class="h-stat-l">Focused</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <p>"Whether you're a <strong>retailer in Europe</strong>, a <strong>wholesaler in the Middle East</strong>, or a <strong>brand in South America</strong> — we handle the full trade cycle so you can focus on your business."</p>
+</div>
+
+<!-- TRADING SERVICES -->
+<section class="trading-services" id="services">
+  <div class="ts-inner">
+    <div class="ts-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-h">Our <em>Trading</em> Services</h2>
+      <p style="font-size:18px;color:var(--mid);max-width:580px;line-height:1.75;">
+        A full suite of trade facilitation services for businesses looking to source, import or export ready-made garments from India.
+      </p>
+    </div>
+    <div class="ts-grid">
+      <div class="ts-card">
+        <div class="ts-card-num">01</div>
+        <div class="ts-icon">🌐</div>
+        <div class="ts-body">
+          <div class="ts-title">Import Facilitation</div>
+          <p class="ts-desc">We handle sourcing, quality inspection, and documentation for businesses looking to import garments into India or source Indian products globally.</p>
+          <ul class="ts-features">
+            <li>Supplier identification & vetting</li>
+            <li>Quality inspection services</li>
+            <li>Import documentation</li>
+            <li>Customs clearance support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ts-card">
+        <div class="ts-card-num">02</div>
+        <div class="ts-icon">🚢</div>
+        <div class="ts-body">
+          <div class="ts-title">Export Coordination</div>
+          <p class="ts-desc">End-to-end export management for garment shipments — from order consolidation to delivery at your international destination.</p>
+          <ul class="ts-features">
+            <li>Export documentation & compliance</li>
+            <li>Freight & logistics management</li>
+            <li>Order consolidation</li>
+            <li>Last-mile delivery tracking</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ts-card">
+        <div class="ts-card-num">03</div>
+        <div class="ts-icon">📋</div>
+        <div class="ts-body">
+          <div class="ts-title">Trade Documentation</div>
+          <p class="ts-desc">We prepare and manage all trade documentation required for seamless international transactions and customs compliance.</p>
+          <ul class="ts-features">
+            <li>Commercial invoices & packing lists</li>
+            <li>Certificate of origin</li>
+            <li>Letter of credit management</li>
+            <li>Regulatory compliance paperwork</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ts-card">
+        <div class="ts-card-num">04</div>
+        <div class="ts-icon">🤝</div>
+        <div class="ts-body">
+          <div class="ts-title">Procurement & Sourcing</div>
+          <p class="ts-desc">Leverage our 30+ years of network to source the exact garments your business needs — at competitive prices with guaranteed quality.</p>
+          <ul class="ts-features">
+            <li>Bulk procurement services</li>
+            <li>Price negotiation on your behalf</li>
+            <li>Supplier relationship management</li>
+            <li>Sample approval & sign-off</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ts-card">
+        <div class="ts-card-num">05</div>
+        <div class="ts-icon">🔍</div>
+        <div class="ts-body">
+          <div class="ts-title">Quality Control & Inspection</div>
+          <p class="ts-desc">Pre-shipment and in-process quality inspections to ensure your goods meet your exact standards before they leave India.</p>
+          <ul class="ts-features">
+            <li>Pre-shipment inspection</li>
+            <li>Fabric & stitching quality audits</li>
+            <li>Measurement & sizing checks</li>
+            <li>Defect reporting & resolution</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ts-card">
+        <div class="ts-card-num">06</div>
+        <div class="ts-icon">📦</div>
+        <div class="ts-body">
+          <div class="ts-title">Supply Chain Management</div>
+          <p class="ts-desc">For businesses requiring ongoing supply, we act as your India-based supply chain partner — managing vendors, timelines, and delivery schedules.</p>
+          <ul class="ts-features">
+            <li>Vendor management</li>
+            <li>Production timeline tracking</li>
+            <li>Inventory & dispatch planning</li>
+            <li>Ongoing relationship management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-header">
+      <span class="section-label" style="color:var(--amber-light)">The Process</span>
+      <h2 class="section-h">How Our <em>Trading</em> Works</h2>
+      <p style="font-size:18px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.7;">Simple, transparent, and fully managed — here's what happens after you get in touch.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-arrow">›</div>
+        <div class="how-step-n">01</div>
+        <div class="how-step-title">Initial Enquiry</div>
+        <p class="how-step-text">Tell us what you need — product type, quantities, destination country and timeline.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-arrow">›</div>
+        <div class="how-step-n">02</div>
+        <div class="how-step-title">Quotation & Sourcing</div>
+        <p class="how-step-text">We source options from our network, provide samples if needed, and send you a competitive quote.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-arrow">›</div>
+        <div class="how-step-n">03</div>
+        <div class="how-step-title">Order & Inspection</div>
+        <p class="how-step-text">Once confirmed, we place the order, manage production timelines, and conduct quality inspections.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-n">04</div>
+        <div class="how-step-title">Ship & Deliver</div>
+        <p class="how-step-text">We handle all export documentation, freight arrangements, and ensure your shipment arrives on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-item"><img src="https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Gold jewelry exports"></div>
+  <div class="photo-strip-item"><img src="https://plus.unsplash.com/premium_photo-1679809447923-b3250fb2a0ce?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Handcrafted vases"></div>
+  <div class="photo-strip-item"><img src="https://plus.unsplash.com/premium_photo-1669863266283-557f9e170d85?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Gold Ganesh statue"></div>
+  <div class="photo-strip-item"><img src="https://images.unsplash.com/photo-1621329109234-d7657d2f3846?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Assorted gemstones"></div>
+</div>
+
+<!-- WHY TRADE WITH US -->
+<section class="why">
+  <div class="why-inner">
+    <div>
+      <div class="why-img" style="background:linear-gradient(135deg,#0d2830 0%,#1a4a55 50%,#0e3040 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.22">
+      <defs>
+        <pattern id="wgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="480" fill="url(#wgrid)"/>
+      <ellipse cx="400" cy="240" rx="380" ry="220" fill="none" stroke="rgba(232,184,75,0.3)" stroke-width="1"/>
+      <ellipse cx="400" cy="240" rx="280" ry="220" fill="none" stroke="rgba(232,184,75,0.15)" stroke-width="1"/>
+      <ellipse cx="400" cy="240" rx="180" ry="220" fill="none" stroke="rgba(232,184,75,0.10)" stroke-width="1"/>
+      <line x1="20" y1="240" x2="780" y2="240" stroke="rgba(232,184,75,0.2)" stroke-width="1"/>
+      <line x1="400" y1="20" x2="400" y2="460" stroke="rgba(232,184,75,0.2)" stroke-width="1"/>
+      <line x1="20" y1="140" x2="780" y2="140" stroke="rgba(232,184,75,0.1)" stroke-width="0.5"/>
+      <line x1="20" y1="340" x2="780" y2="340" stroke="rgba(232,184,75,0.1)" stroke-width="0.5"/>
+      <!-- Continents simplified -->
+      <path d="M 80,100 L 190,80 L 230,110 L 250,170 L 230,220 L 200,270 L 170,310 L 140,300 L 110,260 L 90,210 L 75,160 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <path d="M 155,330 L 205,315 L 235,340 L 245,390 L 230,440 L 195,450 L 165,435 L 150,390 L 148,350 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <path d="M 360,80 L 420,68 L 455,80 L 462,112 L 440,130 L 408,138 L 385,122 L 368,100 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <path d="M 355,155 L 410,140 L 445,158 L 455,220 L 448,300 L 425,350 L 395,362 L 365,345 L 348,285 L 342,215 L 348,170 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <path d="M 460,70 L 590,55 L 700,75 L 740,110 L 720,155 L 675,172 L 610,178 L 545,168 L 500,148 L 465,118 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <path d="M 565,172 L 600,165 L 618,190 L 614,230 L 595,250 L 572,232 L 562,200 Z" fill="rgba(232,184,75,0.75)" stroke="rgba(232,184,75,1)" stroke-width="2"/>
+      <path d="M 650,295 L 735,282 L 775,305 L 782,355 L 762,390 L 722,400 L 685,382 L 660,348 L 655,315 Z" fill="rgba(232,184,75,0.35)" stroke="rgba(232,184,75,0.6)" stroke-width="1.2"/>
+      <!-- Trade routes from India (590,205) -->
+      <line x1="590" y1="205" x2="408" y2="90" stroke="rgba(232,184,75,0.55)" stroke-width="1.5" stroke-dasharray="6,5"/>
+      <line x1="590" y1="205" x2="390" y2="100" stroke="rgba(232,184,75,0.45)" stroke-width="1.2" stroke-dasharray="6,5"/>
+      <line x1="590" y1="205" x2="175" y2="155" stroke="rgba(232,184,75,0.4)" stroke-width="1.2" stroke-dasharray="6,5"/>
+      <line x1="590" y1="205" x2="185" y2="360" stroke="rgba(232,184,75,0.35)" stroke-width="1.2" stroke-dasharray="6,5"/>
+      <line x1="590" y1="205" x2="718" y2="335" stroke="rgba(232,184,75,0.4)" stroke-width="1.2" stroke-dasharray="6,5"/>
+      <line x1="590" y1="205" x2="690" y2="110" stroke="rgba(232,184,75,0.35)" stroke-width="1.2" stroke-dasharray="6,5"/>
+      <!-- Destination dots -->
+      <circle cx="408" cy="90" r="5" fill="#e8b84b" opacity="0.9"/>
+      <circle cx="390" cy="100" r="5" fill="#e8b84b" opacity="0.9"/>
+      <circle cx="175" cy="155" r="5" fill="#e8b84b" opacity="0.9"/>
+      <circle cx="185" cy="360" r="5" fill="#e8b84b" opacity="0.9"/>
+      <circle cx="718" cy="335" r="5" fill="#e8b84b" opacity="0.9"/>
+      <circle cx="690" cy="110" r="5" fill="#e8b84b" opacity="0.9"/>
+      <!-- India hub pulse rings -->
+      <circle cx="590" cy="205" r="18" fill="none" stroke="rgba(197,96,58,0.4)" stroke-width="1.5"/>
+      <circle cx="590" cy="205" r="11" fill="none" stroke="rgba(197,96,58,0.6)" stroke-width="1.5"/>
+      <circle cx="590" cy="205" r="6" fill="#c5603a" opacity="0.95"/>
+    </svg>
+    <!-- Overlay content -->
+    <div style="position:relative;z-index:2;text-align:center;padding:36px 24px;">
+      <div style="font-size:44px;margin-bottom:16px;">🌍</div>
+      <div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#e8b84b;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;text-shadow:0 2px 10px rgba(0,0,0,0.6);">Global Trade Network</div>
+      <div style="font-family:Georgia,serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.65);margin-bottom:24px;">From New Delhi to 20+ Countries</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:7px;max-width:380px;margin:0 auto 24px;">
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">🇬🇧 UK</span>
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">🇩🇪 Germany</span>
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">🇫🇷 France</span>
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">🇺🇸 USA</span>
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">🇯🇵 Japan</span>
+        <span style="padding:4px 12px;background:rgba(232,184,75,0.13);border:1px solid rgba(232,184,75,0.35);color:rgba(255,255,255,0.75);font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;">+ 15 More</span>
+      </div>
+      <div style="display:inline-block;padding:8px 24px;border-top:1px solid rgba(232,184,75,0.35);border-bottom:1px solid rgba(232,184,75,0.35);font-family:Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(232,184,75,0.65);">EST. 1992 · PAHARGANJ, NEW DELHI</div>
+    </div>
+  </div>
+    </div>
+    <div>
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-h">Your Trusted <em>Trade Partner</em></h2>
+      <ul class="why-list">
+        <li class="why-li">
+          <div class="why-check">✓</div>
+          <div>
+            <strong>30+ Years of Trade Network</strong>
+            <span>Our decades in the industry mean established relationships with manufacturers, freight agents, and buyers worldwide.</span>
+          </div>
+        </li>
+        <li class="why-li">
+          <div class="why-check">✓</div>
+          <div>
+            <strong>India-Based, Globally Connected</strong>
+            <span>Strategically located in Paharganj, New Delhi — the heart of India's garment trade hub.</span>
+          </div>
+        </li>
+        <li class="why-li">
+          <div class="why-check">✓</div>
+          <div>
+            <strong>Full Compliance & Documentation</strong>
+            <span>We handle every piece of paperwork — from certificates of origin to letters of credit — ensuring stress-free trade.</span>
+          </div>
+        </li>
+        <li class="why-li">
+          <div class="why-check">✓</div>
+          <div>
+            <strong>Personal Attention on Every Order</strong>
+            <span>As a family-run business, your order is never just a number. Simar Meet Singh personally oversees key trade relationships.</span>
+          </div>
+        </li>
+        <li class="why-li">
+          <div class="why-check">✓</div>
+          <div>
+            <strong>Competitive Pricing</strong>
+            <span>Our strong supplier relationships and volume leverage mean we can offer highly competitive trade pricing.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="countries" id="countries">
+  <div class="countries-inner">
+    <span class="section-label" style="display:block;text-align:center;">Global Trading Footprint</span>
+    <h2 class="section-h" style="text-align:center;">Countries We've <em>Traded With</em></h2>
+    <p style="font-size:17px;color:var(--mid);margin:0 auto;max-width:580px;text-align:center;">
+      Our garments and trading services have reached buyers across Europe, the Middle East, Oceania and South America.
+    </p>
+    <div class="countries-tags">
+      <div class="ctag">🇦🇷 Argentina</div>
+      <div class="ctag">🇨🇦 Canada</div>
+      <div class="ctag">🇫🇷 France</div>
+      <div class="ctag">🇩🇪 Germany</div>
+      <div class="ctag">🇳🇱 Holland</div>
+      <div class="ctag">🇮🇱 Israel</div>
+      <div class="ctag">🇮🇹 Italy</div>
+      <div class="ctag">🇯🇵 Japan</div>
+      <div class="ctag">🇱🇧 Lebanon</div>
+      <div class="ctag">🇳🇱 Netherlands</div>
+      <div class="ctag">🇳🇿 New Zealand</div>
+      <div class="ctag">🇵🇱 Poland</div>
+      <div class="ctag">🇵🇹 Portugal</div>
+      <div class="ctag">🇿🇦 South Africa</div>
+      <div class="ctag">🇰🇷 South Korea</div>
+      <div class="ctag">🇪🇸 Spain</div>
+      <div class="ctag">🇸🇪 Sweden</div>
+      <div class="ctag">🇺🇾 Uruguay</div>
+      <div class="ctag">🇬🇧 United Kingdom</div>
+      <div class="ctag">🇺🇸 USA</div>
+      <div class="ctag">🇿🇼 Zimbabwe</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-t" id="reviews">
+  <div class="reviews-t-header">
+    <span class="section-label" style="color:var(--amber-light)">Client Testimonials</span>
+    <h2 class="section-h">What Our <em>Trade Partners</em> Say</h2>
+    <p>Businesses across 12+ countries trust us to handle their India garment trade — seamlessly and professionally.</p>
+  </div>
+
+  <div class="t-reviews-summary">
+    <div class="t-rsumm"><span class="t-rsumm-big">4.8</span><span class="t-rsumm-lbl">Avg. Rating</span></div>
+    <div class="t-rsumm"><span class="t-rsumm-big">150+</span><span class="t-rsumm-lbl">Trade Partners</span></div>
+    <div class="t-rsumm"><span class="t-rsumm-big">20+</span><span class="t-rsumm-lbl">Countries</span></div>
+    <div class="t-rsumm"><span class="t-rsumm-big">Zero</span><span class="t-rsumm-lbl">Missed Shipments</span></div>
+  </div>
+
+  <div class="t-carousel-wrap">
+    <button class="t-carousel-arrow" id="tradePrev">&#8592;</button>
+    <div class="t-carousel-viewport">
+      <div class="t-carousel-track" id="tradeTrack"></div>
+    </div>
+    <button class="t-carousel-arrow" id="tradeNext">&#8594;</button>
+  </div>
+  <div class="t-carousel-dots-row" id="tradeDots"></div>
+</section>
+
+<script>
+(function(){
+  var reviews = [
+    { init:'HV', name:'Hans Van der Berg', meta:'Director · Amsterdam Wholesale Group, Holland',  flag:'🇳🇱', tag:'Export Coordination',    text:'"Movif India handled our entire export operation for three consecutive seasons — paperwork, freight, customs. Everything was on time and perfectly documented. For a wholesaler like us, having a reliable India-side partner is priceless. We have not looked anywhere else since."' },
+    { init:'MP', name:'Martin Perez',       meta:'Import Manager · BuenosStyle SA, Argentina',    flag:'🇦🇷', tag:'Procurement & Sourcing',  text:'"We gave Movif India a brief for 2,000 pieces of men\'s casual wear with very specific fabric requirements. They came back with samples in 10 days and the final shipment quality exceeded our expectations. Their sourcing network in India is genuinely impressive."' },
+    { init:'JW', name:'James Wilson',       meta:'Trade & Compliance · Wilson Imports, UK',       flag:'🇬🇧', tag:'Trade Documentation',     text:'"The documentation process used to be our biggest headache with Indian suppliers. Movif India changed that completely — every certificate, invoice, and compliance document arrives ahead of schedule without errors. Our customs clearances have been flawless ever since."' },
+    { init:'PD', name:'Pierre Dubois',      meta:'Supply Chain Head · TexFrance SARL, France',   flag:'🇫🇷', tag:'Supply Chain Management', text:'"We placed Movif India in charge of our ongoing garment supply chain for the French market. They coordinate with three manufacturers, consolidate shipments, and deliver on a quarterly cycle without a single delay. This level of professionalism is rare to find."' },
+    { init:'FS', name:'Filipa Santos',      meta:'Operations Lead · LisboaTrade Lda, Portugal',  flag:'🇵🇹', tag:'Quality Control',         text:'"Before working with Movif India, we had consistent pre-shipment quality issues. Their QC team caught defects we would only have found on arrival in Lisbon. The inspection reports are detailed and actionable. Our return rate has dropped to nearly zero."' }
+  ];
+
+  var current = 0;
+  var total = reviews.length;
+  var track   = document.getElementById('tradeTrack');
+  var dotsRow = document.getElementById('tradeDots');
+  var autoTimer;
+
+  // Build cards
+  reviews.forEach(function(r) {
+    var card = document.createElement('div');
+    card.className = 't-review-card';
+    card.innerHTML =
+      '<div class="t-review-stars">★★★★★</div>' +
+      '<span class="t-review-tag">' + r.tag + '</span>' +
+      '<p class="t-review-text">' + r.text + '</p>' +
+      '<div class="t-review-author">' +
+        '<div class="t-review-avatar">' + r.init + '</div>' +
+        '<div><span class="t-review-name">' + r.name + '</span>' +
+        '<span class="t-review-meta">' + r.meta + '</span></div>' +
+        '<div class="t-review-flag">' + r.flag + '</div>' +
+      '</div>';
+    track.appendChild(card);
+  });
+
+  // Build dots
+  reviews.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.className = 't-carousel-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', function() { goTo(i); });
+    dotsRow.appendChild(d);
+  });
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dotsRow.querySelectorAll('.t-carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { goTo(current + 1); }, 5500);
+  }
+
+  document.getElementById('tradePrev').addEventListener('click', function() { goTo(current - 1); startAuto(); });
+  document.getElementById('tradeNext').addEventListener('click', function() { goTo(current + 1); startAuto(); });
+
+  goTo(0);
+  startAuto();
+})();
+</script>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h3>Ready to Start Trading?</h3>
+  <p>Get in touch today and let's discuss how we can be your trusted India garment trade partner.</p>
+  <a href="#contact" class="btn-white">Send a Trade Enquiry</a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-label">Contact Trading Division</span>
+      <h2 class="section-h">Get a <em>Trade Quote</em></h2>
+      <p>Tell us your requirements — product category, quantities, destination, and we'll get back to you with options and pricing within 24 hours.</p>
+      <div class="cdet">
+        <div class="cdet-icon">📍</div>
+        <div>
+          <span class="cdet-label">Address</span>
+          <span class="cdet-val">1540, Sangtrashan Bazar, Pahar Ganj<br>New Delhi – 110 055, India</span>
+        </div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon">📞</div>
+        <div>
+          <span class="cdet-label">Telephone</span>
+          <span class="cdet-val">41541480 &nbsp;·&nbsp; 23586640</span>
+        </div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon">📱</div>
+        <div>
+          <span class="cdet-label">Mobile / WhatsApp</span>
+          <span class="cdet-val">+91 88266 84423</span>
+        </div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon">✉️</div>
+        <div>
+          <span class="cdet-label">Email</span>
+          <span class="cdet-val">movifindia@yahoo.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-box">
+      <div class="cf-title">Trade Enquiry Form</div>
+      <div class="fg-row fg">
+        <div>
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div>
+          <label>Company</label>
+          <input type="text" placeholder="Company name">
+        </div>
+      </div>
+      <div class="fg">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@company.com">
+      </div>
+      <div class="fg-row fg">
+        <div>
+          <label>Country</label>
+          <input type="text" placeholder="e.g. Germany">
+        </div>
+        <div>
+          <label>Estimated Quantity</label>
+          <input type="text" placeholder="e.g. 500 pcs">
+        </div>
+      </div>
+      <div class="fg">
+        <label>Service Required</label>
+        <select>
+          <option>Import Facilitation</option>
+          <option>Export Coordination</option>
+          <option>Procurement & Sourcing</option>
+          <option>Trade Documentation</option>
+          <option>Quality Control / Inspection</option>
+          <option>Full Supply Chain Management</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Product Details & Requirements</label>
+        <textarea placeholder="Describe the garment type, specifications, timeline, and destination..."></textarea>
+      </div>
+      <button class="btn-amber" style="width:100%;padding:16px;font-size:11px;border:none;cursor:pointer;">Send Trade Enquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Movif <span>India</span> International</div>
+      <p class="footer-tagline">Importers, Exporters & Manufacturers of Ready-Made Garments.<br>Paharganj, New Delhi — Est. 1992.</p>
+      <span class="footer-page-badge">Trading Services Division</span>
+    </div>
+    <div class="footer-col">
+      <h4>Trading Services</h4>
+      <ul>
+        <li>Import Facilitation</li>
+        <li>Export Coordination</li>
+        <li>Trade Documentation</li>
+        <li>Procurement & Sourcing</li>
+        <li>Quality Control</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>movifindia@yahoo.com</li>
+        <li>+91 88266 84423</li>
+        <li>41541480 · 23586640</li>
+        <li>Paharganj, New Delhi</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Movif India International. All rights reserved.</span>
+    <a href="index.html" class="footer-back">← Back to Main Website</a>
+  </div>
+</footer>
+
+<!-- Page transition overlay -->
+<div class="page-transition-overlay" id="transitionOverlay"></div>
+
+<script>
+(function() {
+  var overlay = document.getElementById('transitionOverlay');
+
+  // Intercept all links pointing back to index.html
+  document.querySelectorAll('a[href="index.html"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var href = this.getAttribute('href');
+      overlay.classList.add('fade-out');
+      setTimeout(function() { window.location.href = href; }, 360);
+    });
+  });
+})();
+</script>
+</body>
+</html>
